@@ -237,6 +237,8 @@
   var interval;
 
   function scrollCard() {
+    var allowScroll = false;
+
     var container = document.getElementById('card-container');
     if (!container) {
       return false;
@@ -246,7 +248,7 @@
     var parent = container.clientHeight;
     var xH;
 
-    if (length / parent > 1.5) {
+    if (allowScroll && length / parent > 1.5) {
       if (interval) {
         clearInterval(interval)
       }
